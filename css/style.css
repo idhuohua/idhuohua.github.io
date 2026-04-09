@@ -561,11 +561,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .profile {
   margin-top: 3.5rem;
   display: flex;
-  flex-direction: row-reverse;
+  align-items: flex-start;
 }
 .profile .profile-content {
-  width: 50%;
-  margin: 0 1.5rem 0 0;
+  width: 72%;
+  margin: 0 0 0 1.5rem;
 }
 .profile .profile-content .profile-title {
   margin-top: 0;
@@ -597,7 +597,11 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #d5d5d5;
 }
 .profile .profile-image {
-  width: 50%;
+  width: 28%;
+}
+.profile .profile-image img {
+  width: 80%;
+  max-width: 220px;
 }
 @media (max-width: 480px) {
   .profile {
@@ -606,9 +610,14 @@ input[type="search"]::-webkit-search-results-decoration {
   .profile .profile-content {
     width: 100%;
     margin-top: 0.75rem;
+    margin-left: 0;
   }
   .profile .profile-image {
     width: 100%;
+  }
+  .profile .profile-image img {
+    width: 100%;
+    max-width: none;
   }
 }
 .search-popup {
