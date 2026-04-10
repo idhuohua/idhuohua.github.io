@@ -37,7 +37,7 @@
 
     <!-- scripts list from _config.yml -->
     
-    <script src="/js/frame.js"></script>
+    <script src="/js/menu.js"></script>
     
 
 
@@ -60,7 +60,9 @@
   <div class="flex-container">
     <div class="header-inner">
       <div class="site-brand-container">
-        <strong>Portfolio</strong>
+        <a href="/" aria-label="返回上一级">
+          <div class="icon arrow-left"></div>
+        </a>
       </div>
       <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
         Menu
@@ -73,13 +75,13 @@
                 <a href="/">主页</a>
               </li> 
 
-              <li class="menu-item menu-item-active">
+              <li class="menu-item">
                 <a href="/publications/">论文</a>
               </li>              
                    
           
             
-              <li class="menu-item">
+              <li class="menu-item menu-item-active">
                 <a href="/works/">作品集</a>
               </li> 
                    
