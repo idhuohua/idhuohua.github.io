@@ -603,6 +603,39 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 80%;
   max-width: 220px;
 }
+.profile .profile-image .profile-subtitle {
+  width: 80%;
+  margin-top: 0.875rem;
+  font-family: 'Inter', 'Noto Sans SC', helvetica, arial;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #b3b3b3;
+}
+.profile .profile-image .profile-contact-list {
+  width: 80%;
+  margin-top: 0.75rem;
+}
+.profile .profile-image .profile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+  font-family: 'Inter', 'Noto Sans SC', helvetica, arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  color: #d5d5d5;
+}
+.profile .profile-image .profile-contact-item:first-child {
+  margin-top: 0;
+}
+.profile .profile-image .profile-contact-item img {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
 @media (max-width: 480px) {
   .profile {
     flex-wrap: wrap;
@@ -618,6 +651,10 @@ input[type="search"]::-webkit-search-results-decoration {
   .profile .profile-image img {
     width: 100%;
     max-width: none;
+  }
+  .profile .profile-image .profile-subtitle,
+  .profile .profile-image .profile-contact-list {
+    width: 100%;
   }
 }
 .search-popup {
