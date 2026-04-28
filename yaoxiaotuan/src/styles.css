@@ -105,6 +105,7 @@ button {
 
 h1,
 h2,
+h3,
 p {
   margin: 0;
 }
@@ -166,54 +167,6 @@ h1 {
   padding: 12px 14px 92px;
 }
 
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.action-tile {
-  min-height: 86px;
-  padding: 8px 4px;
-  background: #fff;
-  border-radius: var(--radius);
-  color: var(--ink);
-  box-shadow: 0 8px 18px rgba(23, 21, 16, 0.04);
-}
-
-.action-tile span {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  margin: 0 auto 6px;
-  border-radius: 10px;
-  background: #fff4b4;
-  color: #2b2506;
-}
-
-.action-tile svg {
-  width: 20px;
-  height: 20px;
-}
-
-.action-tile strong,
-.action-tile small {
-  display: block;
-  line-height: 1.2;
-}
-
-.action-tile strong {
-  font-size: 13px;
-  margin-bottom: 3px;
-}
-
-.action-tile small {
-  color: var(--muted);
-  font-size: 11px;
-}
-
 .banner {
   display: grid;
   grid-template-columns: 1fr 82px;
@@ -222,8 +175,7 @@ h1 {
   padding: 14px;
   margin-bottom: 12px;
   border-radius: var(--radius);
-  background:
-    linear-gradient(135deg, #fff4a2 0%, #ffdc35 48%, #ffb72a 100%);
+  background: linear-gradient(135deg, #fff4a2 0%, #ffdc35 48%, #ffb72a 100%);
   overflow: hidden;
 }
 
@@ -360,6 +312,39 @@ h1 {
   font-weight: 800;
 }
 
+.expiry-chip {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.expiry-chip.safe-expiry {
+  background: #edf9f5;
+  color: #0a8f7b;
+}
+
+.expiry-chip.near-expiry {
+  background: #fff0e7;
+  color: #cb5a00;
+}
+
+.expiry-chip.expired {
+  background: #ffebea;
+  color: #ce2e24;
+}
+
+.purchase-tip {
+  display: block;
+  margin-top: 6px;
+  color: #cb5a00 !important;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .split-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -381,8 +366,8 @@ h1 {
 .mini-card strong {
   display: block;
   margin-top: 8px;
-  font-size: 21px;
-  line-height: 1.1;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .mini-card.alert {
@@ -440,14 +425,16 @@ h1 {
 }
 
 .field span,
-.switch-row strong {
+.switch-row strong,
+.upload-field span {
   color: #4c473d;
   font-size: 12px;
   font-weight: 900;
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.upload-field input {
   width: 100%;
   min-width: 0;
   border: 1px solid var(--line);
@@ -457,7 +444,8 @@ h1 {
   outline: none;
 }
 
-.field input {
+.field input,
+.upload-field input {
   height: 42px;
   padding: 0 10px;
 }
@@ -470,7 +458,8 @@ h1 {
 }
 
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.upload-field input:focus {
   border-color: var(--yellow-deep);
   box-shadow: 0 0 0 3px rgba(255, 217, 40, 0.25);
 }
@@ -539,6 +528,43 @@ h1 {
   line-height: 1.45;
 }
 
+.demo-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.demo-image-card {
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #efe4c6;
+  background: linear-gradient(180deg, #fffef6 0%, #fff9e8 100%);
+}
+
+.demo-image-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 7px;
+  box-shadow: 0 4px 10px rgba(36, 31, 12, 0.08);
+}
+
+.demo-image-card div {
+  margin-top: 6px;
+}
+
+.demo-image-card strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.demo-image-card p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .primary-button {
   width: 100%;
   height: 46px;
@@ -550,13 +576,35 @@ h1 {
   opacity: 0.72;
 }
 
-.result-card pre {
-  margin: 0;
-  white-space: pre-wrap;
-  word-break: break-word;
-  color: #302a1c;
-  font-size: 13px;
-  line-height: 1.7;
+.ai-summary {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid #efe4c6;
+  background: #fffcf1;
+  color: #473a10;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.risk-text {
+  margin-top: 6px;
+  color: #b64b15;
+  font-weight: 700;
+}
+
+.ai-preview {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.ai-preview h3 {
+  font-size: 14px;
+}
+
+.editable-plan .form-grid {
+  margin-top: 8px;
 }
 
 .empty-state {
@@ -690,15 +738,8 @@ h1 {
     padding-right: 10px;
   }
 
-  .quick-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .form-grid,
-  .split-row {
-    grid-template-columns: 1fr;
-  }
-
+  .split-row,
   .banner {
     grid-template-columns: 1fr;
   }
